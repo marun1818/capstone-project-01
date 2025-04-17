@@ -1,5 +1,4 @@
-FROM ubuntu
+FROM hshar/webapp
 RUN apt-get update
-RUN apt-get install apache2 -y
 ADD . /var/www/html/
-ENTRYPOINT apachectl -F FOREGROUND
+CMD ["apache2ctl", "-D", "FOREGROUND"]
